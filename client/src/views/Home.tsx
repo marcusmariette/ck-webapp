@@ -4,7 +4,7 @@ import React from "react";
 const Home: React.FC = () => {
     return (
         <Typography variant="h6" color="inherit" noWrap>
-            Hello World
+            Hello World. SassDude is suss
         </Typography>
     );
 };
