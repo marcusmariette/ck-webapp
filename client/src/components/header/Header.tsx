@@ -1,9 +1,12 @@
-import { AppBar, IconButton, Toolbar, Typography } from '@mui/material';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { Box } from '@mui/system';
 import React from 'react';
+import { AppBar, Box, Toolbar, Typography } from '@mui/material';
+import ShoppingCartButton from '../button/ShoppingCartButton';
 
-const Header: React.FC = () => {
+type HeaderProps = {
+    cartCount: number;
+};
+
+const Header: React.FC<HeaderProps> = ({ cartCount }) => {
     return (
         <>
             <Box>
@@ -22,9 +25,8 @@ const Header: React.FC = () => {
                         >
                             Cosy Kangaroo
                         </Typography>
-                        <IconButton aria-label='cartIcon' href='/cart' sx={{ color: '#fff' }}>
-                            <ShoppingCartIcon fontSize='large' />
-                        </IconButton>
+                        <Typography variant='h6'>{cartCount}</Typography>
+                        <ShoppingCartButton />
                     </Toolbar>
                 </AppBar>
             </Box>

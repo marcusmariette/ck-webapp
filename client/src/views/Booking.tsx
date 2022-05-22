@@ -1,6 +1,5 @@
-import { Box, Typography } from '@mui/material';
-import { Container } from '@mui/system';
 import React from 'react';
+import { Box, Container, Typography } from '@mui/material';
 
 const Booking: React.FC = () => {
     return (
