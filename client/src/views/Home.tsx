@@ -1,8 +1,7 @@
-import React from 'react';
 import { Box, Container, Typography } from '@mui/material';
 import CenteredButton from 'components/button/CenteredButton';
 
-const Home: React.FC = () => {
+const Home = () => {
     return (
         <Container disableGutters maxWidth={false}>
             <Box height={'100vh'} display={'flex'} flexDirection={'column'}>
@@ -13,9 +12,9 @@ const Home: React.FC = () => {
                     Welcome to Cosy Kangaroo. We hope you enjoy our authentic Australian dishes.
                 </Typography>
 
-                <CenteredButton text={'View Menu'} href={'/menu'} />
-                <CenteredButton text={'Make Booking'} href={'/booking'} />
-                <CenteredButton text={'Staff Login'} href={'/staff-login'} />
+                <CenteredButton text={'View Menu'} link={'/menu'} />
+                <CenteredButton text={'Make Booking'} link={'/booking'} />
+                <CenteredButton text={'Staff Login'} link={'/staff-login'} />
             </Box>
         </Container>
     );

@@ -1,5 +1,6 @@
 import { Grid, Paper, Typography, TextField, Button } from '@mui/material';
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import loginCredentials from 'resources/data/loginDetails.json';
 
 type loginDetails = {
@@ -7,7 +8,9 @@ type loginDetails = {
     password: string;
 };
 
-const LoginForm: React.FC = () => {
+const LoginForm = ({ setUserSignedIn }) => {
+    const navigate = useNavigate();
+
     const defaultLoginDetails: loginDetails = {
         username: '',
         password: '',
@@ -29,7 +32,12 @@ const LoginForm: React.FC = () => {
             return credentials.username === loginDetails.username && credentials.password === loginDetails.password;
         });
 
-        success ? window.location.assign('/staff-portal') : alert('Invlaid Login Credentials');
+        if (success) {
+            setUserSignedIn(true);
+            navigate('/staff-portal');
+        } else {
+            alert('Invlaid Login Credentials');
+        }
     };
 
     return (
