@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Container, Typography } from '@mui/material';
-import CenteredButton from '../components/button/CenteredButton';
+import CenteredButton from 'components/button/CenteredButton';
 
 const Home: React.FC = () => {
     return (
@@ -15,6 +15,7 @@ const Home: React.FC = () => {
 
                 <CenteredButton text={'View Menu'} href={'/menu'} />
                 <CenteredButton text={'Make Booking'} href={'/booking'} />
+                <CenteredButton text={'Staff Login'} href={'/staff-login'} />
             </Box>
         </Container>
     );

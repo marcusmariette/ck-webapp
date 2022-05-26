@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppBar, Box, Toolbar, Typography } from '@mui/material';
-import ShoppingCartButton from '../button/ShoppingCartButton';
+import ShoppingCartButton from 'components/button/ShoppingCartButton';
 
 type HeaderProps = {
     cartCount: number;
