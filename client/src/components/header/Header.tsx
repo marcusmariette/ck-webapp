@@ -1,12 +1,11 @@
 import React from 'react';
 import { AppBar, Box, Toolbar, Typography } from '@mui/material';
-import ShoppingCartButton from '../button/ShoppingCartButton';
+import ShoppingCartButton from 'components/button/ShoppingCartButton';
+import { useNavigate } from 'react-router-dom';
 
-type HeaderProps = {
-    cartCount: number;
-};
+const Header = ({ cartCount }) => {
+    const navigate = useNavigate();
 
-const Header: React.FC<HeaderProps> = ({ cartCount }) => {
     return (
         <>
             <Box>
@@ -15,12 +14,13 @@ const Header: React.FC<HeaderProps> = ({ cartCount }) => {
                         <Typography
                             variant='h6'
                             component='a'
-                            href='/'
+                            onClick={() => navigate('/')}
                             sx={{
                                 mr: 2,
                                 color: 'inherit',
                                 textDecoration: 'none',
                                 flex: 1,
+                                cursor: 'pointer',
                             }}
                         >
                             Cosy Kangaroo
