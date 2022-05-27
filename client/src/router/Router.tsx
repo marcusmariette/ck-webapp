@@ -11,8 +11,6 @@ import Unauthorised from 'views/Unauthorised';
 import Header from 'components/header/Header';
 
 const Router = ({ cartCount, userSignedIn, setUserSignedIn }) => {
-    console.log('Router userSignedIn:', userSignedIn);
-
     return (
         <BrowserRouter>
             <Header cartCount={cartCount} />
