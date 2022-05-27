@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import StaffPortal from 'views/StaffPortal';
 import Booking from 'views/Booking';
 import Cart from 'views/Cart';
-import Checkout from 'views/CheckOut';
+import Checkout from 'views/Checkout';
 import Home from 'views/Home';
 import Menu from 'views/Menu';
 import NotFound from 'views/NotFound';
