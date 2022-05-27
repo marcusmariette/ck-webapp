@@ -7,7 +7,6 @@ const App = () => {
     const cartCount = 0; // Placeholder for now
     const [userSignedIn, setUserSignedIn] = useState(false);
 
-    console.log('App userSignedIn:', userSignedIn);
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
