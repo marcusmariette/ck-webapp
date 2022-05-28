@@ -1,6 +1,19 @@
 import { Card, CardMedia, CardContent, Typography, CardActions, Button } from '@mui/material';
+import { MenuItem } from 'types/types';
 
-const MenuCard = ({ name, description, price, imgSrc }) => {
+const MenuCard = ({ id, name, description, price, imgSrc, cartItems, setCartItems }) => {
+    const handleAddToCart = () => {
+        const itemToAdd: MenuItem = {
+            id,
+            name,
+            description,
+            price,
+            imgSrc,
+        };
+
+        setCartItems([...cartItems, itemToAdd]);
+    };
+
     return (
         <Card sx={{ width: 350, height: 350, margin: 5 }}>
             <CardMedia component='img' height='150' image={require(`resources/images/${imgSrc}`)} alt={name} />
@@ -14,7 +27,7 @@ const MenuCard = ({ name, description, price, imgSrc }) => {
                 <Typography sx={{ fontWeight: '600' }}>{`$${price}`}</Typography>
             </CardContent>
             <CardActions>
-                <Button color={'primary'} variant={'text'} size={'medium'}>
+                <Button color={'primary'} variant={'text'} size={'medium'} onClick={handleAddToCart}>
                     Add to cart
                 </Button>
             </CardActions>

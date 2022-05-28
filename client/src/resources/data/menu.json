@@ -1,53 +1,62 @@
 [
     {
+        "id": 101,
         "name": "Beef Burger",
         "description": "Our classic Beef Burger features a juicy authentic Angus Beef pattie, melted cheese, fresh lettuce, onions, relish and our special Cosy Kangaroo sauce.",
         "price": 20,
         "imgSrc": "beef-burger.jpg"
     },
     {
+        "id": 102,
         "name": "Butter Chicken",
         "description": "Beautiful slow cooked chicken thigh in a coconut cream based curry. Mild spice and served on Jasmine rice with fresh coriander.",
         "price": 24,
         "imgSrc": "butter-chicken.jpg"
     },
     {
+        "id": 103,
         "name": "Chicken Rice Bowl",
         "description": "Tender chicken breasts marinated in a tomato based sauce. Served with fresh seasonal vegetables on a bed of Jasmine rice.",
         "price": 22,
         "imgSrc": "chicken-rice-bowl.jpg"
     },
     {
+        "id": 104,
         "name": "Meat Platter",
         "description": "The \"I'm starving\" meat platter. Includes chicken and pork skewers, lamb gyros and char-grilled potatoes. Served with Chips and Pita Bread.",
         "price": 43,
         "imgSrc": "meat-platter.jpg"
     },
     {
+        "id": 105,
         "name": "Pesto Pasta Salad",
         "description": "Our light and tangy Pesto Pasta Salad is a refreshing yet filling meal. Served with lettuce and tomatoes with our homemade dressing.",
         "price": 21,
         "imgSrc": "pesto-pasta-salad.jpg"
     },
     {
+        "id": 106,
         "name": "Margherita Pizza",
         "description": "Homemade pizza base topped with a tomato base and a selection of cheeses. Cooked over wood fire and served with fresh herbs.",
         "price": 19,
         "imgSrc": "pizza.jpg"
     },
     {
+        "id": 107,
         "name": "Poke Bowl",
         "description": "Our Hawaiian influenced Poke Bowl includes raw tuna, pickled carrot, rice, and fresh vegetables. A healthy and delicious option.",
         "price": 20,
         "imgSrc": "poke-bowl.jpg"
     },
     {
+        "id": 108,
         "name": "Eye Fillet Steak",
         "description": "Slow cooked Beef Eye Fillet Steak. Cooked to your liking and served with Chips and a Salad, with a choice of Mushroom, Gravy or Garlic sauce.",
         "price": 34,
         "imgSrc": "steak.jpg"
     },
     {
+        "id": 109,
         "name": "Sushi Platter",
         "description": "A variety of Sushi served together with Soy Sauce and Vinegar. Salmon, Tuna, Crab and Chicken Sushi included (x2 of each).",
         "price": 22,
