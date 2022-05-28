@@ -2,8 +2,9 @@ import { Box, Container, Typography } from '@mui/material';
 import chunk from 'lodash/chunk';
 import MenuCard from 'components/menuCard/MenuCard';
 import menu from 'resources/data/menu.json';
+import { MenuItem } from 'types/types';
 
-const Menu = () => {
+const Menu = ({ cartItems, setCartItems }) => {
     return (
         <Container disableGutters maxWidth={false}>
             <Box display={'flex'} flexDirection={'column'}>
@@ -11,11 +12,22 @@ const Menu = () => {
                     Menu
                 </Typography>
             </Box>
-            {chunk(menu, 3).map((row) => {
+            {chunk(menu, 3).map((row: MenuItem[], index) => {
                 return (
-                    <Box display={'flex'} flexDirection={'row'} justifyContent={'center'}>
-                        {row.map((col) => {
-                            return <MenuCard name={col.name} description={col.description} price={col.price} imgSrc={col.imgSrc} />;
+                    <Box key={index} display={'flex'} flexDirection={'row'} justifyContent={'center'}>
+                        {row.map((col: MenuItem) => {
+                            return (
+                                <MenuCard
+                                    key={col.id}
+                                    id={col.id}
+                                    name={col.name}
+                                    description={col.description}
+                                    price={col.price}
+                                    imgSrc={col.imgSrc}
+                                    cartItems={cartItems}
+                                    setCartItems={setCartItems}
+                                />
+                            );
                         })}
                     </Box>
                 );
