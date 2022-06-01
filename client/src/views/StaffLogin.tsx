@@ -6,7 +6,7 @@ const StaffLogin = ({ setUserSignedIn }) => {
         <Container disableGutters maxWidth={false}>
             <Box height={'100vh'} display={'flex'} flexDirection={'column'}>
                 <Typography variant='h2' align='center' color='primary.contrastText' gutterBottom paddingTop={20} paddingBottom={10}>
-                    Staff Login
+                    {'Staff Login'}
                 </Typography>
                 <LoginForm setUserSignedIn={setUserSignedIn} />
             </Box>

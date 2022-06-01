@@ -14,7 +14,7 @@ import Header from 'components/header/Header';
 const Router = ({ cartItems, setCartItems, userSignedIn, setUserSignedIn }) => {
     return (
         <BrowserRouter>
-            <Header cartItems={cartItems} />
+            <Header cartItems={cartItems} userSignedIn={userSignedIn} setUserSignedIn={setUserSignedIn} />
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/menu' element={<Menu cartItems={cartItems} setCartItems={setCartItems} />} />
@@ -23,7 +23,7 @@ const Router = ({ cartItems, setCartItems, userSignedIn, setUserSignedIn }) => {
                 <Route path='/checkout' element={<Checkout />} />
                 <Route path='/staff-login' element={<StaffLogin setUserSignedIn={setUserSignedIn} />} />
                 <Route path='/staff-portal' element={userSignedIn ? <StaffPortal /> : <Unauthorised />} />
-                <Route path='/booking-success' element = {<BookingSuccess />} />
+                <Route path='/booking-success' element={<BookingSuccess />} />
                 <Route path='*' element={<NotFound />} />
             </Routes>
         </BrowserRouter>

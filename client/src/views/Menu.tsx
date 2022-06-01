@@ -19,7 +19,6 @@ const Menu = ({ cartItems, setCartItems }) => {
                             return (
                                 <MenuCard
                                     key={col.id}
-                                    id={col.id}
                                     name={col.name}
                                     description={col.description}
                                     price={col.price}
