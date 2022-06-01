@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import StaffPortal from 'views/StaffPortal';
+import BookingSuccess from 'views/BookingSuccess';
 import Booking from 'views/Booking';
 import Cart from 'views/Cart';
 import Checkout from 'views/Checkout';
@@ -22,6 +23,7 @@ const Router = ({ cartItems, setCartItems, userSignedIn, setUserSignedIn }) => {
                 <Route path='/checkout' element={<Checkout />} />
                 <Route path='/staff-login' element={<StaffLogin setUserSignedIn={setUserSignedIn} />} />
                 <Route path='/staff-portal' element={userSignedIn ? <StaffPortal /> : <Unauthorised />} />
+                <Route path='/booking-success' element = {<BookingSuccess />} />
                 <Route path='*' element={<NotFound />} />
             </Routes>
         </BrowserRouter>
