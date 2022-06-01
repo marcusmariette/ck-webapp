@@ -1,6 +1,7 @@
 import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, Typography } from '@mui/material';
 import CenteredButton from 'components/button/CenteredButton';
 import { MenuItem } from 'types/types';
+import { calculateTotalPrice } from 'utils/utils';
 
 const Cart = ({ cartItems, setCartItems }) => {
     const removeItem = (uuid: string) => {
@@ -9,15 +10,6 @@ const Cart = ({ cartItems, setCartItems }) => {
                 return item.id !== uuid;
             })
         );
-    };
-
-    const calculateTotalPrice = () => {
-        let price = 0;
-        cartItems.forEach((item: MenuItem) => {
-            price += item.price;
-        });
-
-        return price;
     };
 
     return (
@@ -59,14 +51,14 @@ const Cart = ({ cartItems, setCartItems }) => {
                             })}
                         </Box>
                         <Typography variant='h5' paddingTop={5} paddingBottom={5} color='primary.contrastText'>
-                            {`Total: $${calculateTotalPrice()}`}
+                            {`Total: $${calculateTotalPrice(cartItems)}`}
                         </Typography>
                     </>
                 )}
 
                 <Box>
                     <CenteredButton text={'Menu'} link={'/menu'} />
-                    <CenteredButton text={'Checkout'} link={'/checkout'} />
+                    {cartItems.length > 0 && <CenteredButton text={'Checkout'} link={'/checkout'} />}
                 </Box>
             </Box>
         </Container>
