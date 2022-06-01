@@ -1,22 +1,18 @@
 import { Grid, Paper, Typography, TextField, Button } from '@mui/material';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { LoginDetails } from 'types/types';
 import loginCredentials from 'resources/data/loginDetails.json';
-
-type loginDetails = {
-    username: string;
-    password: string;
-};
 
 const LoginForm = ({ setUserSignedIn }) => {
     const navigate = useNavigate();
 
-    const defaultLoginDetails: loginDetails = {
+    const defaultLoginDetails: LoginDetails = {
         username: '',
         password: '',
     };
 
-    const [loginDetails, setLoginDetails] = useState<loginDetails>(defaultLoginDetails);
+    const [loginDetails, setLoginDetails] = useState<LoginDetails>(defaultLoginDetails);
 
     const handleChange = (event: any) => {
         const { name, value } = event.target;

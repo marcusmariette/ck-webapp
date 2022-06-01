@@ -1,17 +1,17 @@
 import { useState } from 'react';
 import { CssBaseline, ThemeProvider } from '@mui/material';
-import theme from 'resources/theme';
+import { theme, staffTheme } from 'resources/theme';
 import Router from 'router/Router';
+import { MenuItem } from 'types/types';
 
 const App = () => {
-    const cartCount = 0; // Placeholder for now
-    const [userSignedIn, setUserSignedIn] = useState(false);
+    const [cartItems, setCartItems] = useState<MenuItem[]>([]);
+    const [userSignedIn, setUserSignedIn] = useState<boolean>(false);
 
-    console.log('App userSignedIn:', userSignedIn);
     return (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={userSignedIn ? staffTheme : theme}>
             <CssBaseline />
-            <Router cartCount={cartCount} userSignedIn={userSignedIn} setUserSignedIn={setUserSignedIn} />
+            <Router cartItems={cartItems} setCartItems={setCartItems} userSignedIn={userSignedIn} setUserSignedIn={setUserSignedIn} />
         </ThemeProvider>
     );
 };
