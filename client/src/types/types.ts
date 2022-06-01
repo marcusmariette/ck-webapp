@@ -10,3 +10,12 @@ export type LoginDetails = {
     username: string;
     password: string;
 };
+
+export type CheckoutDetails = {
+    firstName: string;
+    lastName: string;
+    email: string;
+    mobile: string;
+    diningOption: string;
+    tableNumber: string;
+};

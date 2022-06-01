@@ -20,7 +20,7 @@ const Router = ({ cartItems, setCartItems, userSignedIn, setUserSignedIn }) => {
                 <Route path='/menu' element={<Menu cartItems={cartItems} setCartItems={setCartItems} />} />
                 <Route path='/booking' element={<Booking />} />
                 <Route path='/cart' element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />
-                <Route path='/checkout' element={<Checkout />} />
+                <Route path='/checkout' element={<Checkout cartItems={cartItems} />} />
                 <Route path='/staff-login' element={<StaffLogin setUserSignedIn={setUserSignedIn} />} />
                 <Route path='/staff-portal' element={userSignedIn ? <StaffPortal /> : <Unauthorised />} />
                 <Route path='/booking-success' element={<BookingSuccess />} />
