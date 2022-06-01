@@ -1,30 +1,54 @@
-import { AppBar, Box, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Toolbar, Typography, Button } from '@mui/material';
 import ShoppingCartButton from 'components/button/ShoppingCartButton';
 import { useNavigate } from 'react-router-dom';
 
-const Header = ({ cartItems }) => {
+const Header = ({ cartItems, userSignedIn, setUserSignedIn }) => {
     const navigate = useNavigate();
 
     return (
         <Box>
-            <AppBar position='fixed' color={'secondary'} sx={{ paddingLeft: '25px', paddingRight: '25px' }}>
+            <AppBar position='fixed' color={userSignedIn ? 'primary' : 'secondary'} sx={{ paddingLeft: '25px', paddingRight: '25px' }}>
                 <Toolbar>
                     <Typography
                         variant='h6'
-                        component='a'
-                        onClick={() => navigate('/')}
+                        onClick={() => navigate(userSignedIn ? '/staff-portal' : '/')}
                         sx={{
-                            mr: 2,
                             color: 'inherit',
                             textDecoration: 'none',
-                            flex: 1,
                             cursor: 'pointer',
                         }}
                     >
-                        Cosy Kangaroo
+                        {'Cosy Kangaroo'}
                     </Typography>
-                    <Typography variant='h6'>{cartItems.length}</Typography>
-                    <ShoppingCartButton />
+                    {userSignedIn ? (
+                        <>
+                            <Box sx={{ flex: 1 }}></Box>
+                            <Button
+                                color={'inherit'}
+                                variant={'outlined'}
+                                size={'small'}
+                                onClick={() => {
+                                    setUserSignedIn(false);
+                                    navigate('/');
+                                }}
+                            >
+                                {'Logout'}
+                            </Button>
+                        </>
+                    ) : (
+                        <>
+                            <Typography
+                                variant='h6'
+                                textAlign={'right'}
+                                sx={{
+                                    flex: 1,
+                                }}
+                            >
+                                {cartItems.length}
+                            </Typography>
+                            <ShoppingCartButton />
+                        </>
+                    )}
                 </Toolbar>
             </AppBar>
         </Box>

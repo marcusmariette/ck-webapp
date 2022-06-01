@@ -1,10 +1,11 @@
 import { Card, CardMedia, CardContent, Typography, CardActions, Button } from '@mui/material';
 import { MenuItem } from 'types/types';
+import { v4 as uuid } from 'uuid';
 
-const MenuCard = ({ id, name, description, price, imgSrc, cartItems, setCartItems }) => {
+const MenuCard = ({ name, description, price, imgSrc, cartItems, setCartItems }) => {
     const handleAddToCart = () => {
         const itemToAdd: MenuItem = {
-            id,
+            id: uuid(),
             name,
             description,
             price,

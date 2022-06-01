@@ -1,16 +1,15 @@
 import { createTheme } from '@mui/material';
-import { deepOrange, teal } from '@mui/material/colors';
 
-const theme = createTheme({
+export const theme = createTheme({
     palette: {
         background: {
-            default: teal[900],
+            default: '#042A2B',
         },
         primary: {
-            main: teal[900],
+            main: '#042A2B',
         },
         secondary: {
-            main: deepOrange[500],
+            main: '#E76134',
         },
     },
     typography: {
@@ -18,4 +17,12 @@ const theme = createTheme({
     },
 });
 
-export default theme;
+export const staffTheme = createTheme({
+    ...theme,
+    palette: {
+        ...theme.palette,
+        background: {
+            default: '#fff',
+        },
+    },
+});
