@@ -9,7 +9,7 @@ const Menu = ({ cartItems, setCartItems }) => {
         <Container disableGutters maxWidth={false}>
             <Box display={'flex'} flexDirection={'column'}>
                 <Typography variant='h2' align='center' color='primary.contrastText' gutterBottom paddingTop={20}>
-                    Menu
+                    {'Menu'}
                 </Typography>
             </Box>
             {chunk(menu, 3).map((row: MenuItem[], index) => {

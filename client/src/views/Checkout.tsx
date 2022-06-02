@@ -2,7 +2,7 @@ import { Box, Container, Typography } from '@mui/material';
 import CenteredButton from 'components/button/CenteredButton';
 import CheckoutForm from 'components/checkoutForm/CheckoutForm';
 
-const Checkout = ({ cartItems }) => {
+const Checkout = ({ cartItems, setCartItems, orders, setOrders, orderCounter, setOrderCounter }) => {
     return (
         <Container disableGutters maxWidth={false}>
             <Box height={'100vh'} display={'flex'} flexDirection={'column'}>
@@ -19,7 +19,14 @@ const Checkout = ({ cartItems }) => {
                         </Box>
                     </Box>
                 ) : (
-                    <CheckoutForm cartItems={cartItems} />
+                    <CheckoutForm
+                        cartItems={cartItems}
+                        setCartItems={setCartItems}
+                        orders={orders}
+                        setOrders={setOrders}
+                        orderCounter={orderCounter}
+                        setOrderCounter={setOrderCounter}
+                    />
                 )}
             </Box>
         </Container>

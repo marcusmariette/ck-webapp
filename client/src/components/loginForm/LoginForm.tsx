@@ -41,7 +41,7 @@ const LoginForm = ({ setUserSignedIn }) => {
             <Paper variant='elevation' elevation={1} sx={{ justifyContent: 'center', minHeight: '30vh', padding: '3%' }}>
                 <Grid item>
                     <Typography component='h1' variant='h5' paddingBottom={3}>
-                        Login
+                        {'Login'}
                     </Typography>
                 </Grid>
                 <Grid item>
@@ -74,12 +74,12 @@ const LoginForm = ({ setUserSignedIn }) => {
                             </Grid>
                             <Grid item>
                                 <Button variant='contained' type='submit' sx={{ minWidth: '100%' }}>
-                                    Login
+                                    {'Login'}
                                 </Button>
                             </Grid>
                             <Grid item>
                                 <Button variant='contained' onClick={() => setLoginDetails(defaultLoginDetails)} sx={{ minWidth: '100%' }}>
-                                    Reset
+                                    {'Reset'}
                                 </Button>
                             </Grid>
                         </Grid>
