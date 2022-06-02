@@ -19,3 +19,10 @@ export type CheckoutDetails = {
     diningOption: string;
     tableNumber: string;
 };
+
+export type Order = {
+    orderNumber: string;
+    checkoutDetails: CheckoutDetails;
+    items: MenuItem[];
+    timePlaced: string;
+};

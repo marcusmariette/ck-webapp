@@ -29,7 +29,7 @@ const MenuCard = ({ name, description, price, imgSrc, cartItems, setCartItems })
             </CardContent>
             <CardActions>
                 <Button color={'primary'} variant={'text'} size={'medium'} onClick={handleAddToCart}>
-                    Add to cart
+                    {'Add to cart'}
                 </Button>
             </CardActions>
         </Card>

@@ -1,10 +1,10 @@
 import { Grid, Paper, Typography, TextField, Button, FormControlLabel, RadioGroup, Radio } from '@mui/material';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CheckoutDetails } from 'types/types';
+import { CheckoutDetails, Order } from 'types/types';
 import { calculateTotalPrice } from 'utils/utils';
 
-const CheckoutForm = ({ cartItems }) => {
+const CheckoutForm = ({ cartItems, setCartItems, orders, setOrders, orderCounter, setOrderCounter }) => {
     const navigate = useNavigate();
 
     const defaultCheckoutDetails: CheckoutDetails = {
@@ -34,6 +34,23 @@ const CheckoutForm = ({ cartItems }) => {
         });
     };
 
+    const handleSubmit = (event: any) => {
+        event.preventDefault();
+
+        const today = new Date();
+        const orderToAdd: Order = {
+            orderNumber: orderCounter + 1,
+            checkoutDetails: checkoutDetails,
+            items: cartItems,
+            timePlaced: `${today.getHours()}:${today.getMinutes()}`,
+        };
+
+        setOrders([...orders, orderToAdd]);
+        setOrderCounter(orderCounter + 1);
+        setCartItems([]);
+        navigate('/order-success');
+    };
+
     return (
         <Grid container justifyContent={'center'}>
             <Paper variant='elevation' elevation={1} sx={{ justifyContent: 'center', padding: '3%' }}>
@@ -43,7 +60,7 @@ const CheckoutForm = ({ cartItems }) => {
                     </Typography>
                 </Grid>
                 <Grid item>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <Grid container direction='row' spacing={2} marginBottom={2}>
                             <Grid item>
                                 <TextField
