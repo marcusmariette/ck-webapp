@@ -10,7 +10,6 @@ export const calculateTotalPrice = (cartItems: MenuItem[]) => {
 };
 
 export const convert24hTime = (time: string) => {
-    console.log('time:', time);
     const hour = +time.substring(0, 2);
     const newHour = hour % 12 || 12;
 
