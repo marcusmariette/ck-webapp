@@ -13,7 +13,19 @@ export const convert24hTime = (time: string) => {
     const hour = +time.substring(0, 2);
     const newHour = hour % 12 || 12;
 
-    const convertedHourText = newHour < 10 ? `0${newHour}` : `${newHour}`;
     const ampm = hour < 12 ? 'AM' : 'PM';
-    return `${convertedHourText}${time.substring(2, 5)} ${ampm}`;
+    return `${formatSingleDigitTime(newHour)}${time.substring(2, 5)} ${ampm}`;
+};
+
+export const getTodayDateString = (nextYear?: boolean) => {
+    const today = new Date();
+    const year = nextYear ? today.getFullYear() + 1 : today.getFullYear();
+    const month = today.getMonth() + 1;
+    const day = today.getDate();
+
+    return `${year}-${formatSingleDigitTime(month)}-${formatSingleDigitTime(day)}`;
+};
+
+export const formatSingleDigitTime = (value: number) => {
+    return value < 10 ? `0${value}` : `${value}`;
 };

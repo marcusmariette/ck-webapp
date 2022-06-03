@@ -11,6 +11,14 @@ export type LoginDetails = {
     password: string;
 };
 
+export type BookingDetails = {
+    id: string;
+    firstName: string;
+    lastName: string;
+    date: string;
+    time: string;
+};
+
 export type CheckoutDetails = {
     firstName: string;
     lastName: string;
