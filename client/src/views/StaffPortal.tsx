@@ -2,7 +2,7 @@ import { Box, Container, Typography } from '@mui/material';
 import BookingTable from 'components/bookingTable/BookingTable';
 import OrderTable from 'components/orderTable/OrderTable';
 
-const StaffPortal = ({ orders, setOrders }) => {
+const StaffPortal = ({ orders, setOrders, bookings, setBookings }) => {
     return (
         <Container disableGutters maxWidth={false}>
             <Box display={'flex'} flexDirection={'column'}>
@@ -10,7 +10,7 @@ const StaffPortal = ({ orders, setOrders }) => {
                     {'Staff Portal'}
                 </Typography>
                 <OrderTable orders={orders} setOrders={setOrders} />
-                <BookingTable />
+                <BookingTable bookings={bookings} setBookings={setBookings} />
             </Box>
         </Container>
     );

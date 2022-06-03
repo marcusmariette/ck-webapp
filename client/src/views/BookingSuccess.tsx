@@ -1,29 +1,22 @@
 import { Box, Container, Typography } from '@mui/material';
-import CenteredButton from 'components/button/CenteredButton';
+import { convert24hTime } from 'utils/utils';
 
-const BookingSuccess = () => {
-    let message;
-
-    if (localStorage.getItem('message') == null) {
-        message = '';
-        localStorage.setItem('message', JSON.stringify(message));
-    } else {
-        message = JSON.parse(localStorage.getItem('message')!);
-    }
-
+const BookingSuccess = ({ bookings }) => {
     return (
         <Container disableGutters maxWidth={false}>
             <Box height={'100vh'} display={'flex'} flexDirection={'column'}>
                 <Typography variant='h2' align='center' color='primary.contrastText' gutterBottom paddingTop={20}>
-                    {'Success!'}
+                    {'Booking Reserved!'}
                 </Typography>
-                <Typography variant='h5' align='center' color='primary.contrastText' paddingBottom={10} paddingTop={5}>
-                    {message}
+                <Typography variant='h4' align='center' color='primary.contrastText' gutterBottom>
+                    {'Your booking has been successfully reserved.'}
                 </Typography>
-                <Box>
-                    <CenteredButton text={'Return to Homepage'} link={'/'} />
-                    <CenteredButton text={'Make Another Booking'} link={'/booking'} />
-                </Box>
+                <Typography variant='h5' align='center' color='primary.contrastText' paddingTop={10}>
+                    {`Date: ${bookings[bookings.length - 1].date}`}
+                </Typography>
+                <Typography variant='h5' align='center' color='primary.contrastText' paddingBottom={5}>
+                    {`Time: ${convert24hTime(bookings[bookings.length - 1].time)}`}
+                </Typography>
             </Box>
         </Container>
     );
