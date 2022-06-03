@@ -5,6 +5,7 @@ import Booking from 'views/Booking';
 import Cart from 'views/Cart';
 import Checkout from 'views/Checkout';
 import Home from 'views/Home';
+import Invoice from 'views/Invoice';
 import Menu from 'views/Menu';
 import NotFound from 'views/NotFound';
 import StaffLogin from 'views/StaffLogin';
@@ -19,6 +20,7 @@ const Router = ({ cartItems, setCartItems, orders, setOrders, orderCounter, setO
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/menu' element={<Menu cartItems={cartItems} setCartItems={setCartItems} />} />
+                <Route path='/invoice' element={<Invoice orders={orders} cartItems={cartItems}/>} />
                 <Route path='/booking' element={<Booking bookings={bookings} setBookings={setBookings} />} />
                 <Route path='/cart' element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />
                 <Route
