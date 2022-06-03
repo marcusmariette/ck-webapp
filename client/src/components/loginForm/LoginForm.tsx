@@ -48,29 +48,10 @@ const LoginForm = ({ setUserSignedIn }) => {
                     <form onSubmit={handleSubmit}>
                         <Grid container direction='column' spacing={2}>
                             <Grid item>
-                                <TextField
-                                    type='text'
-                                    placeholder='Username'
-                                    fullWidth
-                                    name='username'
-                                    variant='outlined'
-                                    value={loginDetails.username}
-                                    onChange={handleChange}
-                                    required
-                                    autoFocus
-                                />
+                                <TextField type='text' placeholder='Username' fullWidth name='username' variant='outlined' value={loginDetails.username} onChange={handleChange} required autoFocus />
                             </Grid>
                             <Grid item>
-                                <TextField
-                                    type='password'
-                                    placeholder='Password'
-                                    fullWidth
-                                    name='password'
-                                    variant='outlined'
-                                    value={loginDetails.password}
-                                    onChange={handleChange}
-                                    required
-                                />
+                                <TextField type='password' placeholder='Password' fullWidth name='password' variant='outlined' value={loginDetails.password} onChange={handleChange} required />
                             </Grid>
                             <Grid item>
                                 <Button variant='contained' type='submit' sx={{ minWidth: '100%' }}>

@@ -5,7 +5,7 @@ import OrderTable from 'components/orderTable/OrderTable';
 const StaffPortal = ({ orders, setOrders, bookings, setBookings }) => {
     return (
         <Container disableGutters maxWidth={false}>
-            <Box display={'flex'} flexDirection={'column'}>
+            <Box display={'flex'} flexDirection={'column'} sx={{ marginBottom: 5 }}>
                 <Typography variant='h2' align='center' gutterBottom paddingTop={20}>
                     {'Staff Portal'}
                 </Typography>

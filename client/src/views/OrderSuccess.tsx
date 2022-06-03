@@ -1,7 +1,7 @@
 import { Box, Container, Typography } from '@mui/material';
 import CenteredButton from 'components/button/CenteredButton';
 
-const OrderSuccess = ({ orders, cartItems }) => {
+const OrderSuccess = ({ orders }) => {
     return (
         <Container disableGutters maxWidth={false}>
             <Box height={'100vh'} display={'flex'} flexDirection={'column'}>

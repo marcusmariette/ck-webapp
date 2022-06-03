@@ -16,17 +16,7 @@ const Menu = ({ cartItems, setCartItems }) => {
                 return (
                     <Box key={index} display={'flex'} flexDirection={'row'} justifyContent={'center'}>
                         {row.map((col: MenuItem) => {
-                            return (
-                                <MenuCard
-                                    key={col.id}
-                                    name={col.name}
-                                    description={col.description}
-                                    price={col.price}
-                                    imgSrc={col.imgSrc}
-                                    cartItems={cartItems}
-                                    setCartItems={setCartItems}
-                                />
-                            );
+                            return <MenuCard key={col.id} name={col.name} description={col.description} price={col.price} imgSrc={col.imgSrc} cartItems={cartItems} setCartItems={setCartItems} />;
                         })}
                     </Box>
                 );

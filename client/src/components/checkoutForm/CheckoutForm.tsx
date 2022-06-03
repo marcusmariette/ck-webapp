@@ -63,55 +63,19 @@ const CheckoutForm = ({ cartItems, setCartItems, orders, setOrders, orderCounter
                     <form onSubmit={handleSubmit}>
                         <Grid container direction='row' spacing={2} marginBottom={2}>
                             <Grid item>
-                                <TextField
-                                    type='text'
-                                    label='First Name'
-                                    name='firstName'
-                                    variant='outlined'
-                                    value={checkoutDetails.firstName}
-                                    onChange={handleChange}
-                                    required
-                                />
+                                <TextField type='text' label='First Name' name='firstName' variant='outlined' value={checkoutDetails.firstName} onChange={handleChange} required />
                             </Grid>
                             <Grid item>
-                                <TextField
-                                    type='text'
-                                    label='Last Name'
-                                    name='lastName'
-                                    variant='outlined'
-                                    value={checkoutDetails.lastName}
-                                    onChange={handleChange}
-                                    required
-                                />
+                                <TextField type='text' label='Last Name' name='lastName' variant='outlined' value={checkoutDetails.lastName} onChange={handleChange} required />
                             </Grid>
                         </Grid>
 
                         <Grid container direction='column' spacing={2} marginBottom={5}>
                             <Grid item>
-                                <TextField
-                                    type='text'
-                                    label='Email'
-                                    fullWidth
-                                    name='email'
-                                    variant='outlined'
-                                    value={checkoutDetails.email}
-                                    onChange={handleChange}
-                                    required
-                                    autoFocus
-                                />
+                                <TextField type='text' label='Email' fullWidth name='email' variant='outlined' value={checkoutDetails.email} onChange={handleChange} required autoFocus />
                             </Grid>
                             <Grid item>
-                                <TextField
-                                    type='text'
-                                    label='Mobile'
-                                    fullWidth
-                                    name='mobile'
-                                    variant='outlined'
-                                    value={checkoutDetails.mobile}
-                                    onChange={handleChange}
-                                    required
-                                    autoFocus
-                                />
+                                <TextField type='text' label='Mobile' fullWidth name='mobile' variant='outlined' value={checkoutDetails.mobile} onChange={handleChange} required autoFocus />
                             </Grid>
                         </Grid>
 
@@ -121,16 +85,7 @@ const CheckoutForm = ({ cartItems, setCartItems, orders, setOrders, orderCounter
                                 <FormControlLabel value='takeAway' control={<Radio />} label='Take Away' onClick={clearTableNumber} />
                             </RadioGroup>
                             <Grid item sx={{ flex: 1 }}>
-                                <TextField
-                                    type='text'
-                                    label='Table Number'
-                                    fullWidth
-                                    name='tableNumber'
-                                    value={checkoutDetails.tableNumber}
-                                    onChange={handleChange}
-                                    disabled={checkoutDetails.diningOption === 'takeAway'}
-                                    required
-                                />
+                                <TextField type='text' label='Table Number' fullWidth name='tableNumber' value={checkoutDetails.tableNumber} onChange={handleChange} disabled={checkoutDetails.diningOption === 'takeAway'} required />
                             </Grid>
                         </Grid>
 

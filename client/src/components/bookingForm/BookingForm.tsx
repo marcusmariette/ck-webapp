@@ -49,27 +49,10 @@ const BookingForm = ({ bookings, setBookings }) => {
                             <Grid item>
                                 <Grid container direction='row' spacing={2}>
                                     <Grid item>
-                                        <TextField
-                                            type='text'
-                                            label='First Name'
-                                            name='firstName'
-                                            value={bookingDetails.firstName}
-                                            onChange={handleChange}
-                                            required
-                                            fullWidth
-                                        />
+                                        <TextField type='text' label='First Name' name='firstName' value={bookingDetails.firstName} onChange={handleChange} required fullWidth />
                                     </Grid>
                                     <Grid item>
-                                        <TextField
-                                            type='text'
-                                            label='Surname'
-                                            name='lastName'
-                                            variant='outlined'
-                                            value={bookingDetails.lastName}
-                                            onChange={handleChange}
-                                            required
-                                            fullWidth
-                                        />
+                                        <TextField type='text' label='Surname' name='lastName' variant='outlined' value={bookingDetails.lastName} onChange={handleChange} required fullWidth />
                                     </Grid>
                                 </Grid>
                             </Grid>

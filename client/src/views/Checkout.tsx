@@ -21,14 +21,7 @@ const Checkout = ({ cartItems, setCartItems, orders, setOrders, orderCounter, se
                         </Box>
                     </Box>
                 ) : (
-                    <CheckoutForm
-                        cartItems={cartItems}
-                        setCartItems={setCartItems}
-                        orders={orders}
-                        setOrders={setOrders}
-                        orderCounter={orderCounter}
-                        setOrderCounter={setOrderCounter}
-                    />
+                    <CheckoutForm cartItems={cartItems} setCartItems={setCartItems} orders={orders} setOrders={setOrders} orderCounter={orderCounter} setOrderCounter={setOrderCounter} />
                 )}
             </Box>
         </Container>

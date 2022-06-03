@@ -19,32 +19,15 @@ const Router = ({ cartItems, setCartItems, orders, setOrders, orderCounter, setO
             <Header cartItems={cartItems} userSignedIn={userSignedIn} setUserSignedIn={setUserSignedIn} />
             <Routes>
                 <Route path='/' element={<Home />} />
-                <Route path='/menu' element={<Menu cartItems={cartItems} setCartItems={setCartItems} />} />
-                <Route path='/invoice' element={<Invoice orders={orders} cartItems={cartItems}/>} />
                 <Route path='/booking' element={<Booking bookings={bookings} setBookings={setBookings} />} />
+                <Route path='/menu' element={<Menu cartItems={cartItems} setCartItems={setCartItems} />} />
                 <Route path='/cart' element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />
-                <Route
-                    path='/checkout'
-                    element={
-                        <Checkout
-                            cartItems={cartItems}
-                            setCartItems={setCartItems}
-                            orders={orders}
-                            setOrders={setOrders}
-                            orderCounter={orderCounter}
-                            setOrderCounter={setOrderCounter}
-                        />
-                    }
-                />
+                <Route path='/checkout' element={<Checkout cartItems={cartItems} setCartItems={setCartItems} orders={orders} setOrders={setOrders} orderCounter={orderCounter} setOrderCounter={setOrderCounter} />} />
                 <Route path='/staff-login' element={<StaffLogin setUserSignedIn={setUserSignedIn} />} />
-                <Route
-                    path='/staff-portal'
-                    element={
-                        userSignedIn ? <StaffPortal orders={orders} setOrders={setOrders} bookings={bookings} setBookings={setBookings} /> : <Unauthorised />
-                    }
-                />
+                <Route path='/staff-portal' element={userSignedIn ? <StaffPortal orders={orders} setOrders={setOrders} bookings={bookings} setBookings={setBookings} /> : <Unauthorised />} />
                 <Route path='/booking-success' element={<BookingSuccess bookings={bookings} />} />
                 <Route path='/order-success' element={<OrderSuccess orders={orders} />} />
+                <Route path='/invoice' element={<Invoice orders={orders} />} />
                 <Route path='*' element={<NotFound />} />
             </Routes>
         </BrowserRouter>
