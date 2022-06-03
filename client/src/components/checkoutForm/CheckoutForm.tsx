@@ -65,7 +65,7 @@ const CheckoutForm = ({ cartItems, setCartItems, orders, setOrders, orderCounter
                             <Grid item>
                                 <TextField
                                     type='text'
-                                    placeholder='First Name'
+                                    label='First Name'
                                     name='firstName'
                                     variant='outlined'
                                     value={checkoutDetails.firstName}
@@ -76,7 +76,7 @@ const CheckoutForm = ({ cartItems, setCartItems, orders, setOrders, orderCounter
                             <Grid item>
                                 <TextField
                                     type='text'
-                                    placeholder='Last Name'
+                                    label='Last Name'
                                     name='lastName'
                                     variant='outlined'
                                     value={checkoutDetails.lastName}
@@ -90,7 +90,7 @@ const CheckoutForm = ({ cartItems, setCartItems, orders, setOrders, orderCounter
                             <Grid item>
                                 <TextField
                                     type='text'
-                                    placeholder='Email'
+                                    label='Email'
                                     fullWidth
                                     name='email'
                                     variant='outlined'
@@ -103,7 +103,7 @@ const CheckoutForm = ({ cartItems, setCartItems, orders, setOrders, orderCounter
                             <Grid item>
                                 <TextField
                                     type='text'
-                                    placeholder='Mobile'
+                                    label='Mobile'
                                     fullWidth
                                     name='mobile'
                                     variant='outlined'
@@ -123,7 +123,7 @@ const CheckoutForm = ({ cartItems, setCartItems, orders, setOrders, orderCounter
                             <Grid item sx={{ flex: 1 }}>
                                 <TextField
                                     type='text'
-                                    placeholder='Table Number'
+                                    label='Table Number'
                                     fullWidth
                                     name='tableNumber'
                                     value={checkoutDetails.tableNumber}

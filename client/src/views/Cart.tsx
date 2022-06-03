@@ -4,6 +4,8 @@ import { MenuItem } from 'types/types';
 import { calculateTotalPrice } from 'utils/utils';
 
 const Cart = ({ cartItems, setCartItems }) => {
+    const hasCartItems = cartItems.length > 0;
+
     const removeItem = (uuid: string) => {
         setCartItems(
             cartItems.filter((item: MenuItem) => {
@@ -18,7 +20,7 @@ const Cart = ({ cartItems, setCartItems }) => {
                 <Typography variant='h2' align='center' color='primary.contrastText' gutterBottom paddingTop={20}>
                     {'Cart'}
                 </Typography>
-                {cartItems.length < 1 ? (
+                {!hasCartItems ? (
                     <Typography variant='h5' align='center' color='primary.contrastText' paddingBottom={10}>
                         {'The Cart appears to be empty! Go to the Menu to add items to the Cart.'}
                     </Typography>
@@ -58,7 +60,7 @@ const Cart = ({ cartItems, setCartItems }) => {
 
                 <Box>
                     <CenteredButton text={'Menu'} link={'/menu'} />
-                    {cartItems.length > 0 && <CenteredButton text={'Checkout'} link={'/checkout'} />}
+                    {hasCartItems && <CenteredButton text={'Checkout'} link={'/checkout'} />}
                 </Box>
             </Box>
         </Container>
